@@ -9,32 +9,40 @@ public abstract class Funcionario {
     private String nome;
     private String dtAdmissao;
     private String cargo;
-    
-    public Funcionario (int r, String n, String dtAdm){
+
+    public Funcionario(int r, String n, String dtAdm) {
         registro = r;
         nome = n;
         dtAdmissao = dtAdm;
     }
-   abstract public double calcSalBruto();
-   public double calcDesconto(){
-       return 0.10* calcSalBruto();
-   }
-   public void setCargo(String c){
-       cargo = c;
-   }
-    public double calcSalLiquido(){
-       return calcSalBruto() - calcDesconto();
-   }
-    public int getRegistro(){
+
+    abstract public double calcSalBruto();
+
+    public double calcDesconto() {
+        return 0.10 * calcSalBruto();
+    }
+
+    public void setCargo(String c) {
+        cargo = c;
+    }
+
+    public double calcSalLiquido() {
+        return calcSalBruto() - calcDesconto();
+    }
+
+    public int getRegistro() {
         return registro;
     }
-    public String getNome(){
+
+    public String getNome() {
         return nome;
     }
-    public String getdtAdmissao(){
+
+    public String getdtAdmissao() {
         return dtAdmissao;
     }
-    public String getCargo(){
+
+    public String getCargo() {
         return cargo;
     }
 }
