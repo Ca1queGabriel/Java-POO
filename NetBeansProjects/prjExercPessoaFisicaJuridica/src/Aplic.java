@@ -6,6 +6,7 @@
  */
 import fatec.poo.model.PessoaFisica;
 import fatec.poo.model.PessoaJuridica;
+import java.text.DecimalFormat;
 import java.time.LocalDate;
 import java.util.Scanner;
 
@@ -19,7 +20,7 @@ public class Aplic {
         String nome, cgc, cpf;
         int anoInscricao;
         Scanner entrada = new Scanner(System.in);
-
+        DecimalFormat df = new DecimalFormat("###.###");
         System.out.println("Insira o CPF da pessoa física: ");
         cpf = entrada.next();
         System.out.println("Insira o nome da pessoa física: ");
@@ -55,17 +56,17 @@ public class Aplic {
         //outputs pessoa física.
         System.out.println("\n\nNome da pessoa física: " + pessoaFisica.getNome());
         System.out.println("Ano de inscrição da pessoa física: " + pessoaFisica.getAnoInscricao());
-        System.out.println("Total de vendas(compras) da pessoa física: " + pessoaFisica.getTotalCompras());
-        System.out.println("Bônus da pessoa física: " + pessoaFisica.calcBonus(LocalDate.now().getYear())); // podia ser 2025 também, mas o método é legal.
+        System.out.println("Total de vendas(compras) da pessoa física: " + df.format(pessoaFisica.getTotalCompras()));
+        System.out.println("Bônus da pessoa física: " + df.format(pessoaFisica.calcBonus(LocalDate.now().getYear()))); // podia ser 2025 também, mas o método é legal.
         System.out.println("CPF da pessoa física: " + pessoaFisica.getCpf());
-        System.out.println("Valor base da pessoa física: " + pessoaFisica.getBase());
+        System.out.println("Valor base da pessoa física: " + df.format(pessoaFisica.getBase()));
         //outputs pessoa jurídica.
         System.out.println("\n\nNome da pessoa jurídica: " + pessoaJuridica.getNome());
         System.out.println("Ano de inscrição da pessoa jurídica: " + pessoaJuridica.getAnoInscricao());
-        System.out.println("Total de vendas(compras) da pessoa jurídica: " + pessoaJuridica.getTotalCompras());
-        System.out.println("Bônus da pessoa jurídica: " + pessoaJuridica.calcBonus(LocalDate.now().getYear())); // podia ser 2025 também, mas o método é legal.
+        System.out.println("Total de vendas(compras) da pessoa jurídica: " + df.format(pessoaJuridica.getTotalCompras()));
+        System.out.println("Bônus da pessoa jurídica: " + df.format(pessoaJuridica.calcBonus(LocalDate.now().getYear()))); // podia ser 2025 também, mas o método é legal.
         System.out.println("CGC da pessoa jurídica: " + pessoaJuridica.getCgc());
-        System.out.println("Taxa de incentivo da pessoa jurídica: " + pessoaJuridica.getTaxaIncentivo());
+        System.out.println("Taxa de incentivo da pessoa jurídica: " + df.format(pessoaJuridica.getTaxaIncentivo()));
     }
 
 }
