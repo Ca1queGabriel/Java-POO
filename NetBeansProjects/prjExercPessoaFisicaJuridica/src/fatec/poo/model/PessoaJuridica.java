@@ -13,13 +13,13 @@ public class PessoaJuridica extends Pessoa {
     private String cgc;
     private double taxaIncentivo;
 
-    PessoaJuridica(String cg, String n, int anoInsc) {
+    public PessoaJuridica(String cg, String n, int anoInsc) {
         super(n, anoInsc);
         cgc = cg;
     }
 
     public void setTaxaIncentivo(double taxa) {
-        taxaIncentivo = taxa;
+        taxaIncentivo = taxa/100;
     }
 
     public double calcBonus(int valAnoAtual) {
